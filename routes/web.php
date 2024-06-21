@@ -3,6 +3,7 @@
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products', ProductController::class);
 });
 Route::get('google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
-Route::get('google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
+Route::get('auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
+
+
+
+

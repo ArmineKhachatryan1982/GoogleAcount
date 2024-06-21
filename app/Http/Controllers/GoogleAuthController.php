@@ -13,7 +13,7 @@ class GoogleAuthController extends Controller
 
     // redirect user to google signin page
     public function redirect(){
-
+        // dd(Socialite::driver('google')->redirect());
         return Socialite::driver('google')->redirect();
     }
     // handle
